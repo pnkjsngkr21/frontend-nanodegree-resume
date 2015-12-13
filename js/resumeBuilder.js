@@ -8,7 +8,17 @@ var formattedRole = HTMLheaderRole.replace("%data%","Analyst");
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
-$("#main").append(internationalizeButton);
+var formattedMobile = HTMLmobile.replace("%data%","+919604061583");
+var formattedEmail = HTMLemail.replace("%data%","pnkjsngkr21@gmail.com");
+var formattedgithub = HTMLgithub.replace("%data%","https://github.com/pnkjsngkr21");
+
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedgithub);
+
+
+
+
 
 
 var bio = {};
@@ -18,42 +28,40 @@ bio = {
     "contacts" : {
         "email" : "pnkjsngkr21@gmail.com",
         "mobile" : "9604061583",
-        "location" : "Mumbai"
+        "location" : "Pusad"
     },
-    "bioPic" : "images/me.jsp",
+    "bioPic" : "images/fry.jpg",
     "welcomeMessage" : "Welcome!",
-    "skills" : ["Java", "Python", "HTML", "Primavera P6"]
+    "skills" : ["Java", "Python", "HTML", "Primavera P6", "JavaScript"]
 };
+var formattedBiopic = HTMLbioPic.replace("%data%",bio.bioPic);
+$("#header").append(formattedBiopic);
 
 
 if(bio.skills.length !== 0){
     $("#header").append(HTMLskillsStart);
-    var formattedSkills = HTMLskills.replace("%data%",bio.skills[0]);
+    for(skill in bio.skills){
+    var formattedSkills = HTMLskills.replace("%data%",bio.skills[skill]);
     $("#skills").append(formattedSkills);
-    formattedSkills = HTMLskills.replace("%data%",bio.skills[1]);
-    $("#skills").append(formattedSkills);
-    formattedSkills = HTMLskills.replace("%data%",bio.skills[2]);
-    $("#skills").append(formattedSkills);
-    formattedSkills = HTMLskills.replace("%data%",bio.skills[3]);
-    $("#skills").append(formattedSkills);
+}
 }
 
 var work = {
 "jobs" : [
-{
-    "position" : "Analyst",
-    "employer" : "Accenture",
-    "yearsWorked" : 2.5,
-    "location" : "Mumbai",
-    "dateWorked" : "July'13 to Nov'15",
-    "Description" : "Primavera techno-functional resource"
-},
 {
     "position" : "Senior Analyst",
     "employer" : "Accenture",
     "yearsWorked" : 0.1,
     "location" : "Mumbai",
     "dateWorked" : "Dec'15 to till Now",
+    "Description" : "Primavera techno-functional resource"
+},
+{
+    "position" : "Analyst",
+    "employer" : "Accenture",
+    "yearsWorked" : 2.5,
+    "location" : "Mumbai",
+    "dateWorked" : "July'13 to Nov'15",
     "Description" : "Primavera techno-functional resource"
 }
 ]
